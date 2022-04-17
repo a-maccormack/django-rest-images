@@ -1,0 +1,6 @@
+media/
+core_backend/__pycache__/
+images/__pycache__/
+images/migrations/
+db.sqlite3
+.env
