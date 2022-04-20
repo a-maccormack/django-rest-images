@@ -4,11 +4,9 @@ from rest_framework import serializers
 from .models import Image
 
 class ImageSerializer(serializers.ModelSerializer):
-    base64_image = serializers.SerializerMethodField()
-
     class Meta:
         model = Image
-        fields = ('base64_image', 'id')
+        fields = ('id', 'image_file')
 
     def get_base64_image(self, obj):
         f = open(obj.image_file.path, 'rb')
