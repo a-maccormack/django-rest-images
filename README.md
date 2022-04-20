@@ -8,5 +8,13 @@ Send POST request to `http://127.0.0.1:8000/api/upload/` with image as *file* in
 #### To view Image:
 Send GET request to `http://127.0.0.1:8000/media/{image_name}`
 
-## Optional Encoding:
-You can modify the code to include the Base64 image encoder located in the `images/serializers.py` file if you prefer to serve images this way (reccomended)
+*OR*
+
+Send POST request to `http://127.0.0.1:8000/api/retrieve/` with the following payload:
+```json
+{
+  "image_id": your_image_id
+}
+```
+
+This endpoint returns a base_64 encoded image that can then be decoded frontend side.
